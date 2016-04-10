@@ -1,0 +1,17 @@
+PODS:
+  - Ji (1.2.0):
+    - Ji/Ji (= 1.2.0)
+  - Ji/Ji (1.2.0):
+    - Ji/Ji-libxml
+  - Ji/Ji-libxml (1.2.0)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Ji (~> 1.2.0)
+  - SwiftyJSON (~> 2.3.1)
+
+SPEC CHECKSUMS:
+  Ji: ddebb22f9ac445db6e884b66f78ea74fb135fdb7
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0

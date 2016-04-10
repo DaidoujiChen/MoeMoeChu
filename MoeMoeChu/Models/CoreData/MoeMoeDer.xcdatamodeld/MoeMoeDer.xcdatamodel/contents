@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Automatic">
+    <entity name="CustomRecord" representedClassName=".CustomRecord" syncable="YES">
+        <attribute name="customCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastTimePageIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="gallery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gallery" inverseName="custom" inverseEntity="Gallery" syncable="YES"/>
+    </entity>
+    <entity name="Gallery" representedClassName=".Gallery" syncable="YES">
+        <attribute name="archiver_key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="download" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="expunged" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="filecount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filesize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posted" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_jpn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="torrentcount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uploader" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="custom" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CustomRecord" inverseName="gallery" inverseEntity="CustomRecord" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Page" inverseName="gallery" inverseEntity="Page" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="gallery" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="Page" representedClassName=".Page" syncable="YES">
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="localPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalURLPath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gallery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gallery" inverseName="pages" inverseEntity="Gallery" syncable="YES"/>
+    </entity>
+    <entity name="SearchSetting" representedClassName=".SearchSetting" syncable="YES">
+        <attribute name="artistCG" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="asianPorn" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="cosplay" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="doujinshi" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="gameCG" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="imageSet" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="manga" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="misc" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="nonH" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="searchText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="western" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName=".Tag" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gallery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Gallery" inverseName="tags" inverseEntity="Gallery" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CustomRecord" positionX="-144" positionY="242" width="128" height="88"/>
+        <element name="Gallery" positionX="-153" positionY="-135" width="128" height="330"/>
+        <element name="Page" positionX="45" positionY="47" width="128" height="103"/>
+        <element name="SearchSetting" positionX="-299" positionY="-135" width="128" height="208"/>
+        <element name="Tag" positionX="43" positionY="215" width="128" height="73"/>
+    </elements>
+</model>
